@@ -1,4 +1,4 @@
-// src/pages/Reservaciones5.js
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Reservaciones5.css";

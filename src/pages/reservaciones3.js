@@ -28,24 +28,24 @@ export function Reservaciones3() {
     ];
 
     useEffect(() => {
-        // Limpiar selección previa
+        
         localStorage.removeItem("butacasSeleccionadas");
         setButacasSeleccionadas([]);
 
-        // Calcular total de boletos comprados
+        
         const tickets = JSON.parse(localStorage.getItem("ticketsSeleccionados")) || { adulto: 0, infantil: 0, mayor: 0 };
         const total = tickets.adulto + tickets.infantil + tickets.mayor;
         setMaxButacas(total);
     }, []);
 
     const toggleButaca = (id) => {
-        if (asientosComprados.includes(id)) return; // No seleccionar si está comprado
+        if (asientosComprados.includes(id)) return; o
 
-        // Si ya está seleccionada, quitarla
+        
         if (butacasSeleccionadas.includes(id)) {
             setButacasSeleccionadas(prev => prev.filter(b => b !== id));
         }
-        // Si no está seleccionada, agregar solo si no pasa el límite
+        
         else if (butacasSeleccionadas.length < maxButacas) {
             setButacasSeleccionadas(prev => [...prev, id]);
         }
